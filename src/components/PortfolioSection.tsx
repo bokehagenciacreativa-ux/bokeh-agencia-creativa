@@ -24,8 +24,8 @@ const PortfolioSection = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {projects.map((p) => (
             <div key={p.title} className="group rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
-              <div className="relative aspect-video bg-secondary flex items-center justify-center">
-                <span className="text-muted-foreground font-body text-sm">Imagen 16:9</span>
+              <div className="relative aspect-video overflow-hidden">
+                <img src={p.image} alt={p.title} className="w-full h-full object-cover" loading="lazy" />
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-bokeh-dark/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
                   <p className="text-bokeh-white font-body text-sm text-center">{p.description}</p>

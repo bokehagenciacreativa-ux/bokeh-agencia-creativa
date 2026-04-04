@@ -54,6 +54,7 @@ const ServicesSection = () => {
               >
                 Ver más →
               </Link>
+              </div>
             </div>
           ))}
         </div>
