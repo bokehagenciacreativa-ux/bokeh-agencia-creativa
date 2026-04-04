@@ -40,8 +40,12 @@ const ServicesSection = () => {
           {services.map((svc) => (
             <div
               key={svc.title}
-              className={`bg-bokeh-white rounded-xl p-8 border-l-4 ${svc.accent} shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300`}
+              className={`bg-bokeh-white rounded-xl overflow-hidden border-l-4 ${svc.accent} shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300`}
             >
+              <div className="aspect-video overflow-hidden">
+                <img src={svc.image} alt={svc.title} className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="p-8">
               <h3 className="font-heading text-xl font-bold text-foreground mb-3">{svc.title}</h3>
               <p className="font-body text-muted-foreground mb-6">{svc.description}</p>
               <Link
