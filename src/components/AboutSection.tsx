@@ -15,12 +15,19 @@ const AboutSection = () => {
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground leading-tight">
             Sabemos que tu marca tiene algo que contar.
           </h2>
-          {/* Chevron decoration */}
+          <p className="font-body text-lg text-muted-foreground leading-relaxed mt-6">
+            Acompañamos a emprendedores, organizaciones y marcas que quieren llegar a su audiencia con propósito. Conectamos contigo: entendemos tu contexto, tu audiencia y tus objetivos antes de hacer que la magia suceda.
+          </p>
           <div className="chevron-decoration bg-bokeh-yellow absolute -bottom-4 -left-2 opacity-40" />
         </div>
-        <p className="font-body text-lg text-muted-foreground leading-relaxed">
-          Acompañamos a emprendedores, organizaciones y marcas que quieren llegar a su audiencia con propósito. Conectamos contigo: entendemos tu contexto, tu audiencia y tus objetivos antes de hacer que la magia suceda.
-        </p>
+        <div className="rounded-xl overflow-hidden">
+          <img
+            src="https://res.cloudinary.com/declwaq4r/image/upload/v1775316485/DSC02292_deo3cu.jpg"
+            alt="Equipo Bokeh trabajando"
+            className="w-full h-full object-cover rounded-xl"
+            loading="lazy"
+          />
+        </div>
       </div>
     </section>
   );

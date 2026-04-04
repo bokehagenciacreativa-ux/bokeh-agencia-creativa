@@ -6,16 +6,19 @@ const services = [
     title: "Producción audiovisual",
     description: "Video y fotografía que comunican con identidad y mueven a la acción.",
     accent: "border-l-bokeh-green",
+    image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775317633/AUDIOVISUAL_tzimlo.jpg",
   },
   {
     title: "Branding & diseño",
     description: "Identidades visuales que dicen quién eres antes de que digas una sola palabra.",
     accent: "border-l-bokeh-red",
+    image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775317635/DISEN%CC%83O_ESTRATE%CC%81GICO_eehsgo.jpg",
   },
   {
     title: "Gestión de redes sociales",
     description: "Presencia digital constante, estratégica y fiel a tu voz.",
     accent: "border-l-bokeh-blue",
+    image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775317845/REDES_SOCIALES_te3fbn.jpg",
   },
 ];
 
@@ -37,8 +40,12 @@ const ServicesSection = () => {
           {services.map((svc) => (
             <div
               key={svc.title}
-              className={`bg-bokeh-white rounded-xl p-8 border-l-4 ${svc.accent} shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300`}
+              className={`bg-bokeh-white rounded-xl overflow-hidden border-l-4 ${svc.accent} shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300`}
             >
+              <div className="aspect-video overflow-hidden">
+                <img src={svc.image} alt={svc.title} className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="p-8">
               <h3 className="font-heading text-xl font-bold text-foreground mb-3">{svc.title}</h3>
               <p className="font-body text-muted-foreground mb-6">{svc.description}</p>
               <Link
@@ -47,6 +54,7 @@ const ServicesSection = () => {
               >
                 Ver más →
               </Link>
+              </div>
             </div>
           ))}
         </div>
