@@ -2,9 +2,9 @@ import { useScrollFadeIn } from "@/hooks/useScrollFadeIn";
 import { Link } from "react-router-dom";
 
 const projects = [
-  { title: "Proyecto Café Origen", category: "Audiovisual", accent: "bg-bokeh-green", description: "Documental corto sobre la cadena de valor del café en Jaén." },
-  { title: "Marca Cacao Fino", category: "Branding", accent: "bg-bokeh-red", description: "Identidad visual completa para una marca de cacao de especialidad." },
-  { title: "Redes Cooperativa Norte", category: "Social Media", accent: "bg-bokeh-blue", description: "Estrategia de contenido digital para cooperativa cafetalera." },
+  { title: "Aromas del Valle", category: "Branding", accent: "bg-bokeh-red", description: "Identidad visual completa para una marca de cacao de especialidad.", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775316520/MESTIZA_INGLES-05_m3hpnu.jpg" },
+  { title: "Video institucional Colinsa", category: "Audiovisual", accent: "bg-bokeh-green", description: "Producción audiovisual institucional para Colinsa.", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775317631/4_1.18.4_bu9h0w.jpg" },
+  { title: "Gestión de RRSS", category: "Social Media", accent: "bg-bokeh-blue", description: "Estrategia de contenido digital y gestión de redes sociales.", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775323142/GT_-_Consejos_safge_Bond_1_onbi8a.png" },
 ];
 
 const PortfolioSection = () => {

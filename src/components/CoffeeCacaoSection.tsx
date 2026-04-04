@@ -22,8 +22,13 @@ const CoffeeCacaoSection = () => {
             El cacao y café peruano es calidad, tradición y también un ecosistema de historias por contar. Somos parte de la industria del café y cacao: producimos contenido que hace justicia a su origen, su gente, su diversidad y su calidad.
           </p>
         </div>
-        <div className="rounded-xl overflow-hidden aspect-[4/3] bg-bokeh-dark/50 border border-bokeh-white/10 flex items-center justify-center">
-          <span className="text-bokeh-white/30 font-body text-sm">Imagen placeholder</span>
+        <div className="rounded-xl overflow-hidden aspect-[4/3]">
+          <img
+            src="https://res.cloudinary.com/declwaq4r/image/upload/v1775323304/Copy_of_IMG_8668_uej6qy_ejhc97.jpg"
+            alt="Café y cacao peruano"
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
         </div>
       </div>
     </section>

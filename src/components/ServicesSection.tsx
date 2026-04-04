@@ -6,16 +6,19 @@ const services = [
     title: "Producción audiovisual",
     description: "Video y fotografía que comunican con identidad y mueven a la acción.",
     accent: "border-l-bokeh-green",
+    image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775317633/AUDIOVISUAL_tzimlo.jpg",
   },
   {
     title: "Branding & diseño",
     description: "Identidades visuales que dicen quién eres antes de que digas una sola palabra.",
     accent: "border-l-bokeh-red",
+    image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775317635/DISEN%CC%83O_ESTRATE%CC%81GICO_eehsgo.jpg",
   },
   {
     title: "Gestión de redes sociales",
     description: "Presencia digital constante, estratégica y fiel a tu voz.",
     accent: "border-l-bokeh-blue",
+    image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775317845/REDES_SOCIALES_te3fbn.jpg",
   },
 ];
 
