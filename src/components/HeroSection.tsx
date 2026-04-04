@@ -25,7 +25,7 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center max-w-3xl mx-auto px-6">
-        <h1 className="font-heading text-4xl md:text-6xl font-bold text-bokeh-white leading-tight mb-6 lg:text-8xl">
+        <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-bokeh-white leading-tight mb-6">
           Hacemos brillar tu marca, contando sus historias.
         </h1>
         <p className="font-body text-base md:text-lg text-bokeh-white/90 mb-10 max-w-2xl mx-auto">
