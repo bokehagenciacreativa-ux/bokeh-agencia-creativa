@@ -283,12 +283,12 @@ const Origin = () => {
             <CaseCard label="Translation & transcription" title="Client name placeholder" description="Short description of the international project, one or two lines." tag="International client" />
           </div>
           <div className="text-center mt-10">
-            <a
-              href="/portafolio"
+            <Link
+              to="/portafolio"
               className="font-heading font-medium text-bokeh-green hover:underline transition-colors"
             >
               See full portfolio →
-            </a>
+            </Link>
           </div>
         </FadeIn>
       </section>
