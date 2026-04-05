@@ -355,6 +355,7 @@ const Origin = () => {
             </Link>
           </div>
         </FadeIn>
+      </section>
 
       {/* ── Section 9: CTA Final ── */}
       <section id="contact" className="bg-bokeh-dark py-24 md:py-32">
