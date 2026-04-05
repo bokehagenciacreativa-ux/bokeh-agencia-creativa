@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Instagram, Linkedin, Facebook } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useScrollFadeIn } from "@/hooks/useScrollFadeIn";
 import { Button } from "@/components/ui/button";
 
@@ -282,12 +283,12 @@ const Origin = () => {
             <CaseCard label="Translation & transcription" title="Client name placeholder" description="Short description of the international project, one or two lines." tag="International client" />
           </div>
           <div className="text-center mt-10">
-            <a
-              href="/portafolio"
+            <Link
+              to="/portafolio"
               className="font-heading font-medium text-bokeh-green hover:underline transition-colors"
             >
               See full portfolio →
-            </a>
+            </Link>
           </div>
         </FadeIn>
       </section>
@@ -344,6 +345,14 @@ const Origin = () => {
                 <span className="text-muted-foreground font-body text-xs">Logo {i + 1}</span>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              to="/nosotros"
+              className="font-heading font-medium text-muted-foreground hover:text-foreground hover:underline transition-colors"
+            >
+              Learn more about us →
+            </Link>
           </div>
         </FadeIn>
       </section>

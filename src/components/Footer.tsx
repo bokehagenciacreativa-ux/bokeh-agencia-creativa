@@ -1,28 +1,31 @@
 import { Instagram, Linkedin, Facebook } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="bg-bokeh-dark py-12">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          {/* Logo */}
-          <span className="font-heading text-2xl font-bold text-bokeh-white">Bokeh</span>
+          <Link to="/" className="font-heading text-2xl font-bold text-bokeh-white">Bokeh</Link>
 
-          {/* Nav links */}
           <ul className="flex items-center gap-6">
-            {["Inicio", "Servicios", "Portafolio", "Nosotros"].map((link) => (
-              <li key={link}>
-                <a
-                  href={`#${link.toLowerCase()}`}
+            {[
+              { label: "Inicio", to: "/" },
+              { label: "Servicios", to: "/servicios" },
+              { label: "Portafolio", to: "/portafolio" },
+              { label: "Nosotros", to: "/nosotros" },
+            ].map((link) => (
+              <li key={link.label}>
+                <Link
+                  to={link.to}
                   className="font-body text-sm text-bokeh-white/60 hover:text-bokeh-yellow transition-colors"
                 >
-                  {link}
-                </a>
+                  {link.label}
+                </Link>
               </li>
             ))}
           </ul>
 
-          {/* Social icons */}
           <div className="flex items-center gap-4">
             {[
               { Icon: Instagram, href: "#" },
