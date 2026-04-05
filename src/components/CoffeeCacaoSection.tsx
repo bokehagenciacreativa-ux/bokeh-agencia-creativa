@@ -1,4 +1,5 @@
 import { useScrollFadeIn } from "@/hooks/useScrollFadeIn";
+import { Link } from "react-router-dom";
 
 const CoffeeCacaoSection = () => {
   const { ref, isVisible } = useScrollFadeIn();
@@ -18,9 +19,15 @@ const CoffeeCacaoSection = () => {
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-bokeh-white leading-tight mb-6">
             Contenido desde el origen.
           </h2>
-          <p className="font-body text-lg text-bokeh-white/80 leading-relaxed">
+          <p className="font-body text-lg text-bokeh-white/80 leading-relaxed mb-6">
             El cacao y café peruano es calidad, tradición y también un ecosistema de historias por contar. Somos parte de la industria del café y cacao: producimos contenido que hace justicia a su origen, su gente, su diversidad y su calidad.
           </p>
+          <Link
+            to="/origin"
+            className="font-body text-sm font-medium text-bokeh-yellow hover:underline transition-colors"
+          >
+            Are you an international buyer? →
+          </Link>
         </div>
         <div className="rounded-xl overflow-hidden aspect-[4/3]">
           <img

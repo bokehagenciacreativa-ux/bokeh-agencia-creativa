@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -9,9 +11,11 @@ interface ProjectCard {
   title: string;
   category: string;
   image: string | null;
+  portfolioTag: string;
 }
 
 interface ServiceData {
+  id: string;
   label: string;
   heading: string;
   paragraph: string;
@@ -25,6 +29,7 @@ interface ServiceData {
 
 const services: ServiceData[] = [
   {
+    id: "audiovisual",
     label: "Producción audiovisual",
     heading: "Videos y fotografía que mueven a la acción.",
     paragraph:
@@ -35,12 +40,13 @@ const services: ServiceData[] = [
     imagePosition: "left",
     whatsappMsg: "Hola%20Bokeh%2C%20me%20interesa%20su%20servicio%20de%20producci%C3%B3n%20audiovisual.%20%C2%BFPodemos%20conversar%3F",
     projects: [
-      { title: "Video institucional Colinsa", category: "Audiovisual", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775317631/4_1.18.4_bu9h0w.jpg" },
-      { title: "Proyecto 2", category: "Audiovisual", image: null },
-      { title: "Proyecto 3", category: "Audiovisual", image: null },
+      { title: "Video institucional Colinsa", category: "Audiovisual", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775317631/4_1.18.4_bu9h0w.jpg", portfolioTag: "audiovisual" },
+      { title: "Proyecto 2", category: "Audiovisual", image: null, portfolioTag: "audiovisual" },
+      { title: "Proyecto 3", category: "Audiovisual", image: null, portfolioTag: "audiovisual" },
     ],
   },
   {
+    id: "branding",
     label: "Branding & diseño",
     heading: "Identidades visuales que dicen quién eres.",
     paragraph:
@@ -51,12 +57,13 @@ const services: ServiceData[] = [
     imagePosition: "right",
     whatsappMsg: "Hola%20Bokeh%2C%20me%20interesa%20su%20servicio%20de%20branding%20y%20dise%C3%B1o.%20%C2%BFPodemos%20conversar%3F",
     projects: [
-      { title: "Aromas del valle", category: "Branding", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775316520/MESTIZA_INGLES-05_m3hpnu.jpg" },
-      { title: "Proyecto 2", category: "Branding", image: null },
-      { title: "Proyecto 3", category: "Branding", image: null },
+      { title: "Aromas del valle", category: "Branding", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775316520/MESTIZA_INGLES-05_m3hpnu.jpg", portfolioTag: "branding" },
+      { title: "Proyecto 2", category: "Branding", image: null, portfolioTag: "branding" },
+      { title: "Proyecto 3", category: "Branding", image: null, portfolioTag: "branding" },
     ],
   },
   {
+    id: "rrss",
     label: "Gestión de redes sociales",
     heading: "Tu voz digital, constante y estratégica.",
     paragraph:
@@ -67,9 +74,9 @@ const services: ServiceData[] = [
     imagePosition: "left",
     whatsappMsg: "Hola%20Bokeh%2C%20me%20interesa%20su%20servicio%20de%20gesti%C3%B3n%20de%20redes%20sociales.%20%C2%BFPodemos%20conversar%3F",
     projects: [
-      { title: "Gestión de redes sociales", category: "RRSS", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775323142/GT_-_Consejos_safge_Bond_1_onbi8a.png" },
-      { title: "Proyecto 2", category: "RRSS", image: null },
-      { title: "Proyecto 3", category: "RRSS", image: null },
+      { title: "Gestión de redes sociales", category: "RRSS", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775323142/GT_-_Consejos_safge_Bond_1_onbi8a.png", portfolioTag: "rrss" },
+      { title: "Proyecto 2", category: "RRSS", image: null, portfolioTag: "rrss" },
+      { title: "Proyecto 3", category: "RRSS", image: null, portfolioTag: "rrss" },
     ],
   },
 ];
@@ -105,7 +112,11 @@ const ServiceBox = ({ service }: { service: ServiceData }) => {
         <p className="font-body text-xs text-muted-foreground mb-3">Proyectos destacados</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {service.projects.map((proj, i) => (
-            <div key={i} className="rounded-lg overflow-hidden shadow-sm bg-bokeh-white">
+            <a
+              key={i}
+              href={`/portafolio?categoria=${proj.portfolioTag}`}
+              className="rounded-lg overflow-hidden shadow-sm bg-bokeh-white hover:shadow-md transition-shadow"
+            >
               <div className="aspect-video bg-muted overflow-hidden">
                 {proj.image ? (
                   <img src={proj.image} alt={proj.title} className="w-full h-full object-cover" loading="lazy" />
@@ -119,12 +130,12 @@ const ServiceBox = ({ service }: { service: ServiceData }) => {
                 </span>
                 <p className="font-heading text-sm font-bold text-foreground">{proj.title}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
 
-      <div>
+      <div className="flex flex-col sm:flex-row items-start gap-4">
         <a
           href={`${WHATSAPP_BASE}?text=${service.whatsappMsg}`}
           target="_blank"
@@ -133,12 +144,19 @@ const ServiceBox = ({ service }: { service: ServiceData }) => {
         >
           Hablemos de tu proyecto
         </a>
+        <a
+          href="/portafolio"
+          className={`font-body text-sm font-semibold ${service.accentClass} hover:underline self-center`}
+        >
+          Ver portafolio completo →
+        </a>
       </div>
     </div>
   );
 
   return (
     <div
+      id={service.id}
       ref={ref}
       className={`rounded-xl overflow-hidden bg-bokeh-white border-l-4 ${borderClass} shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -163,6 +181,17 @@ const ServiceBox = ({ service }: { service: ServiceData }) => {
 };
 
 const Servicios = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 300);
+    }
+  }, [location.hash]);
+
   return (
     <div className="overflow-x-hidden">
       <Navbar />
