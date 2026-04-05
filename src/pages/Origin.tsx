@@ -346,8 +346,15 @@ const Origin = () => {
               </div>
             ))}
           </div>
+          <div className="text-center mt-8">
+            <Link
+              to="/nosotros"
+              className="font-heading font-medium text-muted-foreground hover:text-foreground hover:underline transition-colors"
+            >
+              Learn more about us →
+            </Link>
+          </div>
         </FadeIn>
-      </section>
 
       {/* ── Section 9: CTA Final ── */}
       <section id="contact" className="bg-bokeh-dark py-24 md:py-32">
