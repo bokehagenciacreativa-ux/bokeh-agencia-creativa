@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Instagram, Linkedin, Facebook } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useScrollFadeIn } from "@/hooks/useScrollFadeIn";
 import { Button } from "@/components/ui/button";
 
