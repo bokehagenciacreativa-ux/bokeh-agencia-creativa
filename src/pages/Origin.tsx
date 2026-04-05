@@ -298,17 +298,9 @@ const Origin = () => {
           <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-bokeh-white leading-tight mb-6">
             Why producing at origin matters
           </h2>
-          <p className="font-heading font-light text-lg text-bokeh-white/90 max-w-3xl mx-auto mb-12">
+          <p className="font-heading font-light text-lg text-bokeh-white/90 max-w-3xl mx-auto">
             No one can tell the story of Peruvian coffee and cacao better than someone who lives it. We are local creative talent: we know the land, the culture and the people. That authenticity is something you cannot outsource from a distance.
           </p>
-          <div className="rounded-t-xl overflow-hidden max-w-4xl mx-auto">
-            <img
-              src="https://res.cloudinary.com/declwaq4r/image/upload/v1775316485/DSC02292_deo3cu.jpg"
-              alt="Bokeh team at origin"
-              className="w-full h-auto object-cover"
-              loading="lazy"
-            />
-          </div>
         </FadeIn>
       </section>
 
