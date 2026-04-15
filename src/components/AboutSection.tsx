@@ -22,7 +22,7 @@ const AboutSection = () => {
         </div>
         <div className="rounded-xl overflow-hidden">
           <img
-            src="https://res.cloudinary.com/declwaq4r/image/upload/v1775316485/DSC02292_deo3cu.jpg"
+            src="https://res.cloudinary.com/declwaq4r/image/upload/v1776257424/DSC02292_envccx.jpg"
             alt="Equipo Bokeh trabajando"
             className="w-full h-full object-cover rounded-xl"
             loading="lazy"
