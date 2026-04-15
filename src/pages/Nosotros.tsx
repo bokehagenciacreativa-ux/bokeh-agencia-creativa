@@ -57,10 +57,10 @@ const stats = [
 const teamMembers = [
   { name: "Seyci Sugey Arias (Sui)", role: "Diseñadora e ilustradora gráfica", specialty: "Cuenta historias con ilustraciones estratégicas." },
   { name: "Carlos", role: "Diseñador gráfico", specialty: "Ojo fresco y trazo preciso." },
-  { name: "Jahaira Alvarado (Jaha)", role: "Practicante audiovisual", specialty: "Talento innato para identificar y capturar momentos especiales." },
+  { name: "Jahaira Alvarado (Jaha)", role: "Practicante audiovisual", specialty: "Identifica y captura momentos especiales." },
   { name: "Sofía Quiñones (Sofie)", role: "Comunicadora y editora", specialty: "Creadora de contenidos virales. Y sí, familia del héroe nacional." },
   { name: "Banny Huaccha (Ban Ban)", role: "Asistente de producción", specialty: "Experta en logística y gestión del tiempo." },
-  { name: "Andrea Díaz Valdez", role: "Practicante de marketing digital", specialty: "Talento excepcional en orden y programación de contenido." },
+  { name: "Andrea Díaz Valdez", role: "Practicante de marketing digital", specialty: "Excepcional en orden y programación de contenido." },
 ];
 
 const values = [
