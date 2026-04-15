@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 
 const WHATSAPP_URL =
-  "https://wa.me/51999999999?text=Hola%20Bokeh%2C%20me%20gustar%C3%ADa%20conversar%20sobre%20un%20proyecto.%20%C2%BFPodemos%20hablar%3F";
+  "https://wa.me/51907133735?text=Hola%20Bokeh%2C%20me%20gustar%C3%ADa%20conversar%20sobre%20un%20proyecto.%20%C2%BFPodemos%20hablar%3F";
 
 const HeroSection = () => {
   return (
