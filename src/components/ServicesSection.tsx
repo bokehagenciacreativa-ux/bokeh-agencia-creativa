@@ -6,7 +6,7 @@ const services = [
     title: "Producción audiovisual",
     description: "Video y fotografía que comunican con identidad y mueven a la acción.",
     accent: "border-l-bokeh-green",
-    image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775317633/AUDIOVISUAL_tzimlo.jpg",
+    image: "https://res.cloudinary.com/declwaq4r/image/upload/v1776318109/AUDIOVISUAL_tzimlo_vk1mrs.jpg",
     anchor: "audiovisual",
   },
   {
