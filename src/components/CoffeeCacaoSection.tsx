@@ -31,7 +31,7 @@ const CoffeeCacaoSection = () => {
         </div>
         <div className="rounded-xl overflow-hidden aspect-[4/3]">
           <img
-            src="https://res.cloudinary.com/declwaq4r/image/upload/v1775323304/Copy_of_IMG_8668_uej6qy_ejhc97.jpg"
+            src="https://res.cloudinary.com/declwaq4r/image/upload/v1775316495/DSC04743-Mejorado-NR_cyc67h.jpg"
             alt="Café y cacao peruano"
             className="w-full h-full object-cover"
             loading="lazy"
