@@ -328,24 +328,45 @@ const Origin = () => {
       </section>
 
       {/* ── Section 8: Trust Signals ── */}
-      <section className="bg-bokeh-white py-20 md:py-28">
+      <section className="bg-bokeh-white" style={{ padding: "40px 0" }}>
         <FadeIn className="container mx-auto px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4 text-center">
             Trusted by brands and organizations across the industry
           </h2>
-          <p className="font-heading font-light text-muted-foreground text-center mb-14 max-w-3xl mx-auto">
-            We have worked with coffee and cacao cooperatives, NGOs and international organizations across northern Peru. We speak your language… literally. Our team includes English-Spanish translation for seamless communication.
+          <p className="font-heading font-light text-muted-foreground text-center mb-10 mx-auto" style={{ maxWidth: 600 }}>
+            We have worked with coffee and cacao cooperatives, NGOs and international organizations across northern Peru. We speak your language — literally. Our team includes English-Spanish translation for seamless communication.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {Array.from({ length: 8 }, (_, i) => (
+          {(() => {
+            const trustLogos = [
+              { name: "Falkon Coffees", src: "https://res.cloudinary.com/declwaq4r/image/upload/v1776316786/Falcon_Coffees_bvtlhs.svg" },
+              { name: "Cenfrocafé", src: "https://res.cloudinary.com/declwaq4r/image/upload/v1776316783/Cenfro_cafe_%C3%BC_vldqi9.svg" },
+              { name: "Grain Global", src: "https://res.cloudinary.com/declwaq4r/image/upload/v1776316787/Grain_global_qzi5jd.svg" },
+              { name: "CHACRA", src: "https://res.cloudinary.com/declwaq4r/image/upload/v1776316783/Chacra_gjxhpl.svg" },
+              { name: "COLINSA", src: "https://res.cloudinary.com/declwaq4r/image/upload/v1776316790/Recurso_8_dojrlo.svg" },
+              { name: "Rikolto", src: "https://res.cloudinary.com/declwaq4r/image/upload/v1776316791/Rikolto_j6g5m3.svg" },
+            ];
+            const repeated = [...trustLogos, ...trustLogos, ...trustLogos, ...trustLogos];
+            return (
               <div
-                key={i}
-                className="aspect-[3/2] rounded-xl bg-secondary/50 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 hover:shadow-md"
+                className="relative overflow-hidden"
+                style={{
+                  maskImage: "linear-gradient(to right, transparent 0%, black 80px, black calc(100% - 80px), transparent 100%)",
+                  WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 80px, black calc(100% - 80px), transparent 100%)",
+                }}
               >
-                <span className="text-muted-foreground font-body text-xs">Logo {i + 1}</span>
+                <div className="flex items-center animate-marquee-left" style={{ gap: "clamp(40px, 5vw, 64px)", width: "max-content", animationDuration: "30s" }}>
+                  {repeated.map((logo, i) => (
+                    <img
+                      key={`${logo.name}-${i}`}
+                      src={logo.src}
+                      alt={logo.name}
+                      className="max-h-6 md:max-h-8 w-auto shrink-0 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                    />
+                  ))}
+                </div>
               </div>
-            ))}
-          </div>
+            );
+          })()}
           <div className="text-center mt-8">
             <Link
               to="/nosotros"
