@@ -28,13 +28,15 @@ const Footer = () => {
 
           <div className="flex items-center gap-4">
             {[
-              { Icon: Instagram, href: "#" },
-              { Icon: Linkedin, href: "#" },
-              { Icon: Facebook, href: "#" },
+              { Icon: Instagram, href: "https://www.instagram.com/bokeh_agencia/" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/company/bokeh-agencia-creativa/" },
+              { Icon: Facebook, href: "https://www.facebook.com/Bokeh2022agencia/" },
             ].map(({ Icon, href }, i) => (
               <a
                 key={i}
                 href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-bokeh-white/60 hover:text-bokeh-yellow transition-colors"
                 aria-label="Red social"
               >
