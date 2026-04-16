@@ -39,9 +39,9 @@ const OriginNavbar = () => {
         }`}
       >
         <div className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-8">
-          <a href="#inicio" className="font-heading text-2xl font-bold tracking-tight">
+          <Link to="/" className="font-heading text-2xl font-bold tracking-tight">
             <span className={scrolled ? "text-foreground" : "text-bokeh-white"}>Bokeh</span>
-          </a>
+          </Link>
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
