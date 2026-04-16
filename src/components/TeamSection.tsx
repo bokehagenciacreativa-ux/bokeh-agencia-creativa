@@ -15,8 +15,8 @@ const TeamSection = () => {
         <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-10 text-center">
           Las personas detrás de Bokeh.
         </h2>
-        <div className="rounded-2xl overflow-hidden aspect-[21/9] bg-secondary flex items-center justify-center mb-8">
-          <span className="text-muted-foreground font-body text-sm">Foto del equipo placeholder</span>
+        <div className="rounded-2xl overflow-hidden aspect-[21/9] mb-8">
+          <img src="https://res.cloudinary.com/declwaq4r/image/upload/v1776317926/DSC04786-Mejorado-NR_bmhnig_bhzwxu.jpg" alt="Equipo Bokeh" className="w-full h-full object-cover" loading="lazy" />
         </div>
         <div className="text-center">
           <Link
