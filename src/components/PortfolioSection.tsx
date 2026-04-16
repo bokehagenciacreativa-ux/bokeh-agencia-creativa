@@ -2,9 +2,30 @@ import { useScrollFadeIn } from "@/hooks/useScrollFadeIn";
 import { Link } from "react-router-dom";
 
 const projects = [
-  { title: "Aromas del Valle", category: "Branding", accent: "bg-bokeh-red", description: "Identidad visual completa para una marca de cacao de especialidad.", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775316520/MESTIZA_INGLES-05_m3hpnu.jpg" },
-  { title: "Video institucional Colinsa", category: "Audiovisual", accent: "bg-bokeh-green", description: "Producción audiovisual institucional para Colinsa.", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775317631/4_1.18.4_bu9h0w.jpg" },
-  { title: "Gestión de RRSS", category: "Social Media", accent: "bg-bokeh-blue", description: "Estrategia de contenido digital y gestión de redes sociales.", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775323142/GT_-_Consejos_safge_Bond_1_onbi8a.png" },
+  {
+    title: "Jaenitos Point",
+    category: "Branding & Diseño",
+    accent: "bg-bokeh-red",
+    description: "Identidad visual completa para Jaenitos Point.",
+    image: "https://res.cloudinary.com/declwaq4r/image/upload/v1776256097/Isologo_-_Eggshell_xy2xd2.jpg",
+    link: "/portafolio/jaenitos-point",
+  },
+  {
+    title: "Gran Mirador Coffee",
+    category: "Producción Audiovisual",
+    accent: "bg-bokeh-green",
+    description: "Producción audiovisual para Gran Mirador Coffee.",
+    image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775317631/4_1.18.4_bu9h0w.jpg",
+    link: "/portafolio/gran-mirador-video",
+  },
+  {
+    title: "Grupo Troya",
+    category: "Gestión de RRSS",
+    accent: "bg-bokeh-blue",
+    description: "Estrategia de contenido digital y gestión de redes sociales.",
+    image: "https://res.cloudinary.com/declwaq4r/image/upload/v1776256626/Captura_de_pantalla_2026-04-15_073615_jusgx5.png",
+    link: "/portafolio/grupo-troya",
+  },
 ];
 
 const PortfolioSection = () => {
@@ -23,10 +44,9 @@ const PortfolioSection = () => {
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           {projects.map((p) => (
-            <div key={p.title} className="group rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+            <Link key={p.title} to={p.link} className="group rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 block">
               <div className="relative aspect-video overflow-hidden">
                 <img src={p.image} alt={p.title} className="w-full h-full object-cover" loading="lazy" />
-                {/* Hover overlay */}
                 <div className="absolute inset-0 bg-bokeh-dark/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
                   <p className="text-bokeh-white font-body text-sm text-center">{p.description}</p>
                 </div>
@@ -37,13 +57,13 @@ const PortfolioSection = () => {
                 </span>
                 <h3 className="font-heading text-lg font-bold text-foreground">{p.title}</h3>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         <div className="text-center mt-12">
           <Link
             to="/portafolio"
-            className="font-heading text-lg font-semibold text-bokeh-yellow hover:underline"
+            className="font-heading text-lg font-medium text-foreground hover:underline"
           >
             Ver portafolio completo →
           </Link>
