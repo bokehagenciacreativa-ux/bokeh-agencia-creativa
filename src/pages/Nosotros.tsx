@@ -93,8 +93,8 @@ const Nosotros = () => {
       <section className="bg-background py-20 md:py-28">
         <FadeIn>
           <div className="max-w-[680px] mx-auto px-6 text-center space-y-6">
-            <p className="font-heading font-light text-base md:text-lg text-foreground leading-relaxed">
-              Nuestro equipo cree en el poder de los sueños, de tus sueños. Narramos el valor de las ideas, las marcas y los lugares que visitamos. Tratamos cada proyecto como propio, porque sabemos que detrás de cada marca hay una historia que merece ser contada de la manera correcta. Investigamos, planificamos y creamos con un estándar de calidad que combina estrategia, diseño y escucha genuina, para que tu historia sea recordada.
+            <p className="font-heading font-light text-base md:text-lg text-foreground leading-relaxed whitespace-pre-line">
+              Nuestro equipo cree en el poder de los sueños, de tus sueños.{"\n"}Narramos el valor de las ideas, las marcas y los lugares que visitamos. Tratamos cada proyecto como propio, porque sabemos que detrás de cada marca hay una historia que merece ser contada de la manera correcta. Investigamos, planificamos y creamos con un estándar de calidad que combina estrategia, diseño y escucha, para que tu historia sea recordada.
             </p>
             <p className="font-heading font-light text-base md:text-lg text-foreground leading-relaxed">
               Construimos puentes entre marcas y sus audiencias a través de piezas que emocionan, informan y conectan. Somos autenticidad, estrategia y mucho cuidado en cada detalle.
