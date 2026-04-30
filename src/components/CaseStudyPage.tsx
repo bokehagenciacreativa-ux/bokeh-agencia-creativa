@@ -3,6 +3,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
+export interface TeamMember {
+  role: string;
+  name: string;
+}
+
 export interface CaseStudyProps {
   image: string;
   serviceTag: string;
@@ -14,6 +19,8 @@ export interface CaseStudyProps {
   resultado: string;
   whatsappUrl: string;
   nextHref: string;
+  team?: TeamMember[];
+  tools?: string;
 }
 
 const GalleryPlaceholder = ({ ratio }: { ratio: "4/3" | "16/9" }) => (
@@ -41,6 +48,8 @@ const CaseStudyPage = ({
   resultado,
   whatsappUrl,
   nextHref,
+  team,
+  tools,
 }: CaseStudyProps) => {
   return (
     <div
@@ -159,6 +168,45 @@ const CaseStudyPage = ({
               {resultado}
             </p>
           </div>
+
+          {/* Equipo */}
+          {team && team.length > 0 && (
+            <div>
+              <p
+                className="mb-4"
+                style={{
+                  fontWeight: 700,
+                  fontSize: 11,
+                  textTransform: "uppercase",
+                  letterSpacing: "2px",
+                  color: "#0c0c0c80",
+                }}
+              >
+                Equipo
+              </p>
+              <div style={{ maxWidth: 680 }} className="space-y-2">
+                {team.map((m, i) => (
+                  <p key={i} style={{ fontSize: 16, color: "#0c0c0c", lineHeight: 1.6 }}>
+                    <span style={{ fontWeight: 500 }}>{m.role}:</span>{" "}
+                    <span style={{ fontWeight: 300 }}>{m.name}</span>
+                  </p>
+                ))}
+                {tools && (
+                  <p
+                    className="pt-4"
+                    style={{
+                      fontWeight: 300,
+                      fontSize: 14,
+                      color: "#0c0c0c99",
+                      fontStyle: "italic",
+                    }}
+                  >
+                    Herramientas: {tools}
+                  </p>
+                )}
+              </div>
+            </div>
+          )}
 
           <div style={{ height: 1, backgroundColor: "#0c0c0c33" }} />
         </div>

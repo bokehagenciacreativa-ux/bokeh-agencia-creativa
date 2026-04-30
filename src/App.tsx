@@ -13,6 +13,10 @@ import Portafolio from "./pages/Portafolio.tsx";
 import JaenitosPoint from "./pages/portafolio/JaenitosPoint.tsx";
 import ChacraBranding from "./pages/portafolio/ChacraBranding.tsx";
 import WilderGarcia from "./pages/portafolio/WilderGarcia.tsx";
+import GranMiradorVideo from "./pages/portafolio/GranMiradorVideo.tsx";
+import Calandria from "./pages/portafolio/Calandria.tsx";
+import Colinsa from "./pages/portafolio/Colinsa.tsx";
+import GranMiradorWOC from "./pages/portafolio/GranMiradorWOC.tsx";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +36,10 @@ const App = () => (
           <Route path="/portafolio/jaenitos-point" element={<JaenitosPoint />} />
           <Route path="/portafolio/chacra-branding" element={<ChacraBranding />} />
           <Route path="/portafolio/wilder-garcia" element={<WilderGarcia />} />
+          <Route path="/portafolio/gran-mirador-video" element={<GranMiradorVideo />} />
+          <Route path="/portafolio/calandria" element={<Calandria />} />
+          <Route path="/portafolio/colinsa" element={<Colinsa />} />
+          <Route path="/portafolio/gran-mirador-woc" element={<GranMiradorWOC />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
