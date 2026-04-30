@@ -10,6 +10,9 @@ import NotFound from "./pages/NotFound.tsx";
 import Origin from "./pages/Origin.tsx";
 import Nosotros from "./pages/Nosotros.tsx";
 import Portafolio from "./pages/Portafolio.tsx";
+import JaenitosPoint from "./pages/portafolio/JaenitosPoint.tsx";
+import ChacraBranding from "./pages/portafolio/ChacraBranding.tsx";
+import WilderGarcia from "./pages/portafolio/WilderGarcia.tsx";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +29,9 @@ const App = () => (
           <Route path="/origin" element={<Origin />} />
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/portafolio" element={<Portafolio />} />
+          <Route path="/portafolio/jaenitos-point" element={<JaenitosPoint />} />
+          <Route path="/portafolio/chacra-branding" element={<ChacraBranding />} />
+          <Route path="/portafolio/wilder-garcia" element={<WilderGarcia />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
