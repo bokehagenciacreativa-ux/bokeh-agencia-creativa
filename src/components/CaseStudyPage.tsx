@@ -16,6 +16,20 @@ export interface CaseStudyProps {
   nextHref: string;
 }
 
+const GalleryPlaceholder = ({ ratio }: { ratio: "4/3" | "16/9" }) => (
+  <div
+    className="w-full flex items-center justify-center rounded-xl"
+    style={{
+      backgroundColor: "#d4c9ac",
+      aspectRatio: ratio,
+    }}
+  >
+    <span style={{ fontFamily: "Outfit, sans-serif", fontWeight: 300, color: "#0c0c0c80", fontSize: 14 }}>
+      Imagen del proyecto
+    </span>
+  </div>
+);
+
 const CaseStudyPage = ({
   image,
   serviceTag,
@@ -29,76 +43,131 @@ const CaseStudyPage = ({
   nextHref,
 }: CaseStudyProps) => {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "#e8dfc5", color: "#0c0c0c", fontFamily: "Outfit, sans-serif" }}>
+    <div
+      className="min-h-screen"
+      style={{ backgroundColor: "#e8dfc5", color: "#0c0c0c", fontFamily: "Outfit, sans-serif" }}
+    >
       <Navbar />
       <WhatsAppButton />
 
-      {/* Header */}
-      <section style={{ backgroundColor: "#0c0c0c" }} className="pt-20">
+      {/* Hero image - no dark header */}
+      <section className="pt-20" style={{ backgroundColor: "#e8dfc5" }}>
         <img
           src={image}
           alt={title}
-          className="w-full object-cover"
-          style={{ maxHeight: 480, height: "auto" }}
+          className="w-full object-cover hero-image"
         />
       </section>
 
       {/* Title block */}
-      <section style={{ backgroundColor: "#e8dfc5" }} className="pt-10 md:pt-14 pb-6">
-        <div className="mx-auto px-6" style={{ maxWidth: 740 }}>
-          <div className="flex flex-wrap gap-2 mb-5">
+      <section style={{ backgroundColor: "#e8dfc5" }} className="pt-12 md:pt-16 pb-8">
+        <div className="mx-auto case-container">
+          <div className="flex flex-wrap gap-2 mb-6">
             <span
-              className="px-3 py-1 rounded-full text-[13px]"
-              style={{ fontWeight: 500, border: "1.5px solid #0c0c0c", color: "#0c0c0c" }}
+              className="px-3 py-1 rounded-full"
+              style={{ fontWeight: 500, fontSize: 13, border: "1.5px solid #0c0c0c", color: "#0c0c0c" }}
             >
               {serviceTag}
             </span>
             {sectorTags.map((t) => (
               <span
                 key={t}
-                className="px-3 py-1 rounded-full text-[13px]"
-                style={{ fontWeight: 500, border: "1px solid #0c0c0c66", color: "#0c0c0c" }}
+                className="px-3 py-1 rounded-full"
+                style={{ fontWeight: 500, fontSize: 13, border: "1px solid #0c0c0c", color: "#0c0c0c" }}
               >
                 {t}
               </span>
             ))}
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl mb-3" style={{ fontWeight: 700, color: "#0c0c0c" }}>
+          <h1
+            className="mb-3"
+            style={{ fontWeight: 700, color: "#0c0c0c", fontSize: "clamp(32px, 5vw, 48px)", lineHeight: 1.1 }}
+          >
             {title}
           </h1>
-          <p className="text-base md:text-lg" style={{ fontWeight: 300, color: "#0c0c0c99" }}>
-            {clientCategory}
-          </p>
+          <p style={{ fontWeight: 300, fontSize: 16, color: "#0c0c0c99" }}>{clientCategory}</p>
+
+          <div className="mt-10" style={{ height: 1, backgroundColor: "#0c0c0c33" }} />
         </div>
       </section>
 
       {/* Content */}
-      <section style={{ backgroundColor: "#e8dfc5" }} className="py-10 md:py-16">
-        <div className="mx-auto px-6 space-y-10 md:space-y-12" style={{ maxWidth: 740 }}>
-          {[
-            { label: "El reto", body: reto },
-            { label: "Lo que hicimos", body: hicimos },
-            { label: "El resultado", body: resultado },
-          ].map((s) => (
-            <div key={s.label}>
-              <p
-                className="text-xs uppercase tracking-wider mb-3"
-                style={{ fontWeight: 500, color: "#0c0c0c99", letterSpacing: "0.1em" }}
-              >
-                {s.label}
-              </p>
-              <p className="text-base md:text-lg leading-relaxed" style={{ fontWeight: 300, color: "#0c0c0c" }}>
-                {s.body}
-              </p>
+      <section style={{ backgroundColor: "#e8dfc5" }} className="pb-12 md:pb-16">
+        <div className="mx-auto case-container space-y-12 md:space-y-16">
+          {/* El reto */}
+          <div>
+            <p
+              className="mb-4"
+              style={{
+                fontWeight: 700,
+                fontSize: 11,
+                textTransform: "uppercase",
+                letterSpacing: "2px",
+                color: "#0c0c0c80",
+              }}
+            >
+              El reto
+            </p>
+            <p style={{ fontWeight: 300, fontSize: 18, lineHeight: 1.7, color: "#0c0c0c", maxWidth: 680 }}>
+              {reto}
+            </p>
+          </div>
+
+          {/* Lo que hicimos */}
+          <div>
+            <p
+              className="mb-4"
+              style={{
+                fontWeight: 700,
+                fontSize: 11,
+                textTransform: "uppercase",
+                letterSpacing: "2px",
+                color: "#0c0c0c80",
+              }}
+            >
+              Lo que hicimos
+            </p>
+            <p style={{ fontWeight: 300, fontSize: 18, lineHeight: 1.7, color: "#0c0c0c", maxWidth: 680 }}>
+              {hicimos}
+            </p>
+
+            {/* Gallery */}
+            <div className="mt-10 space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <GalleryPlaceholder ratio="4/3" />
+                <GalleryPlaceholder ratio="4/3" />
+              </div>
+              <GalleryPlaceholder ratio="16/9" />
             </div>
-          ))}
+          </div>
+
+          {/* El resultado */}
+          <div>
+            <p
+              className="mb-4"
+              style={{
+                fontWeight: 700,
+                fontSize: 11,
+                textTransform: "uppercase",
+                letterSpacing: "2px",
+                color: "#0c0c0c80",
+              }}
+            >
+              El resultado
+            </p>
+            <p style={{ fontWeight: 300, fontSize: 18, lineHeight: 1.7, color: "#0c0c0c", maxWidth: 680 }}>
+              {resultado}
+            </p>
+          </div>
+
+          <div style={{ height: 1, backgroundColor: "#0c0c0c33" }} />
         </div>
       </section>
 
       {/* Bottom navigation */}
-      <section style={{ backgroundColor: "#ffffff" }} className="py-8">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row gap-4 md:justify-between max-w-4xl mx-auto">
+      <section style={{ backgroundColor: "#ffffff", padding: "32px 0" }}>
+        <div className="mx-auto case-container">
+          <div className="flex flex-col md:flex-row gap-4 md:justify-between">
             <Link
               to="/portafolio"
               className="px-6 py-3 rounded-full text-center transition-all hover:scale-105 w-full md:w-auto"
@@ -118,16 +187,25 @@ const CaseStudyPage = ({
       </section>
 
       {/* CTA */}
-      <section style={{ backgroundColor: "#0c0c0c" }} className="py-20 md:py-28">
+      <section style={{ backgroundColor: "#0c0c0c", padding: "80px 0" }}>
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl mb-8 text-white" style={{ fontWeight: 700 }}>
+          <h2
+            className="mb-4 text-white"
+            style={{ fontWeight: 700, fontSize: "clamp(28px, 4vw, 36px)" }}
+          >
             ¿Te interesa un proyecto similar?
           </h2>
+          <p
+            className="mb-8 text-white mx-auto"
+            style={{ fontWeight: 300, fontSize: 18, maxWidth: 560 }}
+          >
+            Cuéntanos tu proyecto y encontramos la mejor forma de ayudarte.
+          </p>
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-3 rounded-full transition-all hover:scale-105 w-full md:w-auto"
+            className="inline-block px-8 py-3 rounded-full transition-all hover:scale-105"
             style={{ fontWeight: 500, backgroundColor: "#f8b126", color: "#0c0c0c" }}
           >
             Hablemos por WhatsApp
@@ -136,6 +214,28 @@ const CaseStudyPage = ({
       </section>
 
       <Footer />
+
+      <style>{`
+        .hero-image {
+          height: 300px;
+          max-height: 300px;
+        }
+        .case-container {
+          max-width: 800px;
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+        @media (min-width: 768px) {
+          .hero-image {
+            height: auto;
+            max-height: 520px;
+          }
+          .case-container {
+            padding-left: 60px;
+            padding-right: 60px;
+          }
+        }
+      `}</style>
     </div>
   );
 };
