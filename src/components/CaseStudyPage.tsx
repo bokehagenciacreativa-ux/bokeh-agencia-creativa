@@ -3,6 +3,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
+export interface TeamMember {
+  role: string;
+  name: string;
+}
+
 export interface CaseStudyProps {
   image: string;
   serviceTag: string;
@@ -14,6 +19,8 @@ export interface CaseStudyProps {
   resultado: string;
   whatsappUrl: string;
   nextHref: string;
+  team?: TeamMember[];
+  tools?: string;
 }
 
 const GalleryPlaceholder = ({ ratio }: { ratio: "4/3" | "16/9" }) => (
