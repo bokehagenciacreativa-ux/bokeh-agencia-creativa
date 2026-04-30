@@ -308,6 +308,10 @@ const CaseStudyPage = ({
           padding-left: 24px;
           padding-right: 24px;
         }
+        .rrss-tall {
+          width: 100%;
+          max-width: 240px;
+        }
         @media (min-width: 768px) {
           .hero-image {
             height: auto;
@@ -316,6 +320,9 @@ const CaseStudyPage = ({
           .case-container {
             padding-left: 60px;
             padding-right: 60px;
+          }
+          .rrss-tall {
+            max-width: 280px;
           }
         }
       `}</style>
