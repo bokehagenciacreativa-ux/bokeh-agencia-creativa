@@ -21,6 +21,7 @@ export interface CaseStudyProps {
   nextHref: string;
   team?: TeamMember[];
   tools?: string;
+  variant?: "default" | "rrss";
 }
 
 const GalleryPlaceholder = ({ ratio }: { ratio: "4/3" | "16/9" }) => (
@@ -50,6 +51,7 @@ const CaseStudyPage = ({
   nextHref,
   team,
   tools,
+  variant = "default",
 }: CaseStudyProps) => {
   return (
     <div
@@ -141,13 +143,46 @@ const CaseStudyPage = ({
             </p>
 
             {/* Gallery */}
-            <div className="mt-10 space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <GalleryPlaceholder ratio="4/3" />
-                <GalleryPlaceholder ratio="4/3" />
+            {variant === "rrss" ? (
+              <div className="mt-10 space-y-6">
+                <div className="flex justify-center">
+                  <div
+                    className="rrss-tall flex items-center justify-center rounded-xl"
+                    style={{ backgroundColor: "#d4c9ac", aspectRatio: "9/16" }}
+                  >
+                    <span style={{ fontFamily: "Outfit, sans-serif", fontWeight: 300, color: "#0c0c0c80", fontSize: 14 }}>
+                      Video o GIF de la cuenta
+                    </span>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div
+                    className="w-full flex items-center justify-center rounded-xl"
+                    style={{ backgroundColor: "#d4c9ac", aspectRatio: "4/3" }}
+                  >
+                    <span style={{ fontFamily: "Outfit, sans-serif", fontWeight: 300, color: "#0c0c0c80", fontSize: 14 }}>
+                      Pieza realizada
+                    </span>
+                  </div>
+                  <div
+                    className="w-full flex items-center justify-center rounded-xl"
+                    style={{ backgroundColor: "#d4c9ac", aspectRatio: "4/3" }}
+                  >
+                    <span style={{ fontFamily: "Outfit, sans-serif", fontWeight: 300, color: "#0c0c0c80", fontSize: 14 }}>
+                      Pieza realizada
+                    </span>
+                  </div>
+                </div>
               </div>
-              <GalleryPlaceholder ratio="16/9" />
-            </div>
+            ) : (
+              <div className="mt-10 space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <GalleryPlaceholder ratio="4/3" />
+                  <GalleryPlaceholder ratio="4/3" />
+                </div>
+                <GalleryPlaceholder ratio="16/9" />
+              </div>
+            )}
           </div>
 
           {/* El resultado */}
@@ -273,6 +308,10 @@ const CaseStudyPage = ({
           padding-left: 24px;
           padding-right: 24px;
         }
+        .rrss-tall {
+          width: 100%;
+          max-width: 240px;
+        }
         @media (min-width: 768px) {
           .hero-image {
             height: auto;
@@ -281,6 +320,9 @@ const CaseStudyPage = ({
           .case-container {
             padding-left: 60px;
             padding-right: 60px;
+          }
+          .rrss-tall {
+            max-width: 280px;
           }
         }
       `}</style>

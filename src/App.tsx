@@ -17,6 +17,11 @@ import GranMiradorVideo from "./pages/portafolio/GranMiradorVideo.tsx";
 import Calandria from "./pages/portafolio/Calandria.tsx";
 import Colinsa from "./pages/portafolio/Colinsa.tsx";
 import GranMiradorWOC from "./pages/portafolio/GranMiradorWOC.tsx";
+import GrupoTroya from "./pages/portafolio/GrupoTroya.tsx";
+import AromasDelValle from "./pages/portafolio/AromasDelValle.tsx";
+import ChacraRRSS from "./pages/portafolio/ChacraRRSS.tsx";
+import GranMiradorRRSS from "./pages/portafolio/GranMiradorRRSS.tsx";
+import GrainGlobal from "./pages/portafolio/GrainGlobal.tsx";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +45,11 @@ const App = () => (
           <Route path="/portafolio/calandria" element={<Calandria />} />
           <Route path="/portafolio/colinsa" element={<Colinsa />} />
           <Route path="/portafolio/gran-mirador-woc" element={<GranMiradorWOC />} />
+          <Route path="/portafolio/grupo-troya" element={<GrupoTroya />} />
+          <Route path="/portafolio/aromas-del-valle" element={<AromasDelValle />} />
+          <Route path="/portafolio/chacra-rrss" element={<ChacraRRSS />} />
+          <Route path="/portafolio/gran-mirador-rrss" element={<GranMiradorRRSS />} />
+          <Route path="/portafolio/grain-global" element={<GrainGlobal />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
