@@ -48,6 +48,8 @@ const CaseStudyPage = ({
   resultado,
   whatsappUrl,
   nextHref,
+  team,
+  tools,
 }: CaseStudyProps) => {
   return (
     <div
