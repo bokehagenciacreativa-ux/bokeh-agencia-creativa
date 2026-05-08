@@ -8,11 +8,12 @@ const WHATSAPP_URL =
   "https://wa.me/51907133735?text=Hola%20Bokeh!%20Me%20interesa%20su%20servicio%20de%20producci%C3%B3n%20de%20contenido%20para%20marcas%20de%20caf%C3%A9%20y%20cacao.%20%C2%BFPodemos%20conversar%3F";
 
 const navLinks = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Servicios", href: "#services" },
-  { label: "Portafolio", href: "#portfolio" },
-  { label: "Nosotros", href: "#about" },
-  { label: "Contacto", href: "#contact" },
+  { label: "Inicio", href: "/" },
+  { label: "Servicios", href: "/servicios" },
+  { label: "Portafolio", href: "/portafolio" },
+  { label: "International", href: "/international" },
+  { label: "Exportación", href: "/exportacion" },
+  { label: "Nosotros", href: "/nosotros" },
 ];
 
 /* ───── Navbar ───── */
@@ -44,15 +45,15 @@ const ExportacionNavbar = () => {
           </Link>
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                to={link.href}
                 className={`font-heading font-medium text-sm transition-colors duration-200 hover:text-bokeh-yellow ${
                   scrolled ? "text-foreground" : "text-bokeh-white"
                 }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <button
               onClick={scrollToCta}
@@ -80,14 +81,14 @@ const ExportacionNavbar = () => {
             <X size={32} />
           </button>
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
+              to={link.href}
               onClick={() => setMenuOpen(false)}
               className="font-heading text-3xl font-bold text-bokeh-white hover:text-bokeh-yellow transition-colors"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <button
             onClick={() => {
