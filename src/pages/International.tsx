@@ -16,7 +16,7 @@ const navLinks = [
 ];
 
 /* ───── Navbar ───── */
-const OriginNavbar = () => {
+const InternationalNavbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -148,7 +148,7 @@ const CaseCard = ({
 );
 
 /* ───── Page ───── */
-const Origin = () => {
+const International = () => {
   const scrollToCta = (e: React.MouseEvent) => {
     e.preventDefault();
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
@@ -156,7 +156,7 @@ const Origin = () => {
 
   return (
     <div className="overflow-x-hidden">
-      <OriginNavbar />
+      <InternationalNavbar />
 
       {/* ── Section 1: Hero ── */}
       <section id="inicio" className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -438,4 +438,4 @@ const Origin = () => {
   );
 };
 
-export default Origin;
+export default International;
