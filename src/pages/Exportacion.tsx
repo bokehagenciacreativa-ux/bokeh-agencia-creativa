@@ -8,11 +8,12 @@ const WHATSAPP_URL =
   "https://wa.me/51907133735?text=Hola%20Bokeh!%20Me%20interesa%20su%20servicio%20de%20producci%C3%B3n%20de%20contenido%20para%20marcas%20de%20caf%C3%A9%20y%20cacao.%20%C2%BFPodemos%20conversar%3F";
 
 const navLinks = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Servicios", href: "#services" },
-  { label: "Portafolio", href: "#portfolio" },
-  { label: "Nosotros", href: "#about" },
-  { label: "Contacto", href: "#contact" },
+  { label: "Inicio", href: "/" },
+  { label: "Servicios", href: "/servicios" },
+  { label: "Portafolio", href: "/portafolio" },
+  { label: "International", href: "/international" },
+  { label: "Exportación", href: "/exportacion" },
+  { label: "Nosotros", href: "/nosotros" },
 ];
 
 /* ───── Navbar ───── */
