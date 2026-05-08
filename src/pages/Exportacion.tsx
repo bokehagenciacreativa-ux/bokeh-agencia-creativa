@@ -45,15 +45,15 @@ const ExportacionNavbar = () => {
           </Link>
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                to={link.href}
                 className={`font-heading font-medium text-sm transition-colors duration-200 hover:text-bokeh-yellow ${
                   scrolled ? "text-foreground" : "text-bokeh-white"
                 }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <button
               onClick={scrollToCta}
@@ -81,14 +81,14 @@ const ExportacionNavbar = () => {
             <X size={32} />
           </button>
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
+              to={link.href}
               onClick={() => setMenuOpen(false)}
               className="font-heading text-3xl font-bold text-bokeh-white hover:text-bokeh-yellow transition-colors"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <button
             onClick={() => {
