@@ -23,7 +23,7 @@ const CoffeeCacaoSection = () => {
             El cacao y café peruano es calidad, tradición y también un ecosistema de historias por contar. Somos parte de la industria del café y cacao: producimos contenido que hace justicia a su origen, su gente, su diversidad y su calidad.
           </p>
           <Link
-            to="/origin"
+            to="/international"
             className="font-body text-sm font-medium text-bokeh-yellow hover:underline transition-colors"
           >
             Are you an international buyer? →
