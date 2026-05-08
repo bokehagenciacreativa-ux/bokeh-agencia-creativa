@@ -7,7 +7,8 @@ import ScrollToTop from "./components/ScrollToTop.tsx";
 import Index from "./pages/Index.tsx";
 import Servicios from "./pages/Servicios.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import Origin from "./pages/Origin.tsx";
+import International from "./pages/International.tsx";
+import Exportacion from "./pages/Exportacion.tsx";
 import Nosotros from "./pages/Nosotros.tsx";
 import Portafolio from "./pages/Portafolio.tsx";
 import JaenitosPoint from "./pages/portafolio/JaenitosPoint.tsx";
@@ -35,7 +36,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/servicios" element={<Servicios />} />
-          <Route path="/origin" element={<Origin />} />
+          <Route path="/international" element={<International />} />
+          <Route path="/exportacion" element={<Exportacion />} />
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/portafolio" element={<Portafolio />} />
           <Route path="/portafolio/jaenitos-point" element={<JaenitosPoint />} />

@@ -5,18 +5,18 @@ import { useScrollFadeIn } from "@/hooks/useScrollFadeIn";
 import { Button } from "@/components/ui/button";
 
 const WHATSAPP_URL =
-  "https://wa.me/51907133735?text=Hi%20Bokeh!%20I'm%20interested%20in%20your%20content%20production%20services%20for%20coffee%20and%20cacao%20brands.%20Can%20we%20talk%3F";
+  "https://wa.me/51907133735?text=Hola%20Bokeh!%20Me%20interesa%20su%20servicio%20de%20producci%C3%B3n%20de%20contenido%20para%20marcas%20de%20caf%C3%A9%20y%20cacao.%20%C2%BFPodemos%20conversar%3F";
 
 const navLinks = [
-  { label: "Home", href: "#inicio" },
-  { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "About us", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Inicio", href: "#inicio" },
+  { label: "Servicios", href: "#services" },
+  { label: "Portafolio", href: "#portfolio" },
+  { label: "Nosotros", href: "#about" },
+  { label: "Contacto", href: "#contact" },
 ];
 
 /* ───── Navbar ───── */
-const OriginNavbar = () => {
+const ExportacionNavbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -58,13 +58,13 @@ const OriginNavbar = () => {
               onClick={scrollToCta}
               className="font-heading font-medium text-sm bg-bokeh-yellow text-bokeh-dark px-5 py-2 rounded-full hover:bg-[#f59e1e] transition-all hover:scale-105"
             >
-              Let's talk
+              Conversemos
             </button>
           </div>
           <button
             onClick={() => setMenuOpen(true)}
             className={`md:hidden ${scrolled ? "text-foreground" : "text-bokeh-white"}`}
-            aria-label="Open menu"
+            aria-label="Abrir menú"
           >
             <Menu size={28} />
           </button>
@@ -75,7 +75,7 @@ const OriginNavbar = () => {
           <button
             onClick={() => setMenuOpen(false)}
             className="absolute top-6 right-6 text-bokeh-white"
-            aria-label="Close menu"
+            aria-label="Cerrar menú"
           >
             <X size={32} />
           </button>
@@ -96,7 +96,7 @@ const OriginNavbar = () => {
             }}
             className="font-heading text-xl font-medium bg-bokeh-yellow text-bokeh-dark px-8 py-3 rounded-full"
           >
-            Let's talk
+            Conversemos
           </button>
         </div>
       )}
@@ -148,7 +148,7 @@ const CaseCard = ({
 );
 
 /* ───── Page ───── */
-const Origin = () => {
+const Exportacion = () => {
   const scrollToCta = (e: React.MouseEvent) => {
     e.preventDefault();
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
@@ -156,7 +156,7 @@ const Origin = () => {
 
   return (
     <div className="overflow-x-hidden">
-      <OriginNavbar />
+      <ExportacionNavbar />
 
       {/* ── Section 1: Hero ── */}
       <section id="inicio" className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -168,36 +168,36 @@ const Origin = () => {
         <div className="absolute inset-0 bg-bokeh-dark/40" />
         <div className="relative z-10 text-center max-w-3xl mx-auto px-6">
           <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-bokeh-white leading-tight mb-6">
-            Your coffee and cacao have a story. We tell it.
+            Tu café y cacao tienen una historia. Nosotros la contamos.
           </h1>
           <p className="font-heading font-light text-base md:text-lg text-bokeh-white/90 mb-10 max-w-2xl mx-auto">
-            We are a creative communication agency based in northern Peru: the origin. We produce the audiovisual content your brand needs to connect with international buyers, authentically and professionally.
+            Somos una agencia creativa de comunicación basada en el norte del Perú: el origen. Producimos el contenido audiovisual que tu marca necesita para conectar con compradores internacionales, de manera auténtica y profesional.
           </p>
           <button
             onClick={scrollToCta}
             className="font-heading font-medium bg-bokeh-yellow text-bokeh-dark px-8 py-3 rounded-full hover:bg-[#f59e1e] transition-all duration-200 hover:scale-105 text-lg"
           >
-            Let's talk
+            Conversemos
           </button>
         </div>
       </section>
 
-      {/* ── Section 2: The Problem ── */}
+      {/* ── Section 2: El Problema ── */}
       <section className="bg-background py-20 md:py-28">
         <FadeIn className="container mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground leading-tight">
-              Your product is exceptional. But does the world know it?
+              Tu producto es excepcional. Pero, ¿el mundo lo sabe?
             </h2>
             <div className="chevron-decoration bg-bokeh-yellow absolute -bottom-4 -left-2 opacity-40" />
           </div>
           <p className="font-heading font-light text-lg text-muted-foreground leading-relaxed">
-            International buyers want more than quality: they want to see the origin, the people, the process behind what they source. Without compelling visual content, even the best coffee or cacao gets lost in a crowded market.
+            Los compradores internacionales quieren más que calidad: quieren ver el origen, las personas, el proceso detrás de lo que adquieren. Sin contenido visual potente, incluso el mejor café o cacao se pierde en un mercado saturado.
           </p>
         </FadeIn>
       </section>
 
-      {/* ── Section 3: The Solution ── */}
+      {/* ── Section 3: La Solución ── */}
       <section className="bg-bokeh-dark py-20 md:py-28">
         <FadeIn className="container mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -205,16 +205,16 @@ const Origin = () => {
               <Chevron />
             </div>
             <h2 className="font-heading text-3xl md:text-5xl font-bold text-bokeh-white leading-tight mb-6">
-              We bring your origin to life.
+              Damos vida a tu origen.
             </h2>
             <p className="font-heading font-light text-lg text-bokeh-white/80 leading-relaxed">
-              Bokeh produces professional photo and video content from the source: the farms, the cooperatives, the landscapes of Jaén, San Ignacio, Tarapoto and other regions of Peru's cloud forest belt. We give international buyers what they need to trust, choose and proudly showcase your product.
+              Bokeh produce contenido fotográfico y audiovisual profesional desde la fuente: las fincas, las cooperativas y los paisajes de Jaén, San Ignacio, Tarapoto y otras regiones del cinturón de selva alta del Perú. Le damos a los compradores internacionales lo que necesitan para confiar, elegir y mostrar con orgullo tu producto.
             </p>
           </div>
           <div className="rounded-xl overflow-hidden aspect-[4/3]">
             <img
               src="https://res.cloudinary.com/declwaq4r/image/upload/v1775316498/DSC04786-Mejorado-NR_bmhnig.jpg"
-              alt="Coffee origin Peru"
+              alt="Origen del café peruano"
               className="w-full h-full object-cover"
               loading="lazy"
             />
@@ -222,19 +222,19 @@ const Origin = () => {
         </FadeIn>
       </section>
 
-      {/* ── Section 4: What We Create ── */}
+      {/* ── Section 4: Lo que creamos ── */}
       <section id="services" className="bg-background py-20 md:py-28">
         <FadeIn className="container mx-auto px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-14 text-center">
-            What we create for you
+            Lo que creamos para ti
           </h2>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {[
-              "Origin story videos for your brand or cooperative",
-              "Professional photography of farms, harvest and processing",
-              "Content for international trade fairs and presentations",
-              "Social media assets for global audiences",
-              "Brand identity and packaging design",
+              "Videos de historia de origen para tu marca o cooperativa",
+              "Fotografía profesional de fincas, cosecha y procesamiento",
+              "Contenido para ferias internacionales y presentaciones",
+              "Piezas para redes sociales orientadas a audiencias globales",
+              "Identidad de marca y diseño de packaging",
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-4">
                 <Chevron />
@@ -245,18 +245,18 @@ const Origin = () => {
         </FadeIn>
       </section>
 
-      {/* ── Section 5: How We Work ── */}
+      {/* ── Section 5: Cómo trabajamos ── */}
       <section className="bg-bokeh-white py-20 md:py-28">
         <FadeIn className="container mx-auto px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-14 text-center">
-            How we work
+            Cómo trabajamos
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { n: "01", name: "We listen", desc: "We start by understanding your product, your buyers and your goals." },
-              { n: "02", name: "We plan", desc: "We design a content strategy tailored to your market and message." },
-              { n: "03", name: "We produce", desc: "Our team goes to the coffee and cacao field to capture the real story." },
-              { n: "04", name: "We deliver", desc: "You receive professional, ready-to-use content in your language." },
+              { n: "01", name: "Escuchamos", desc: "Empezamos por entender tu producto, tus compradores y tus objetivos." },
+              { n: "02", name: "Planificamos", desc: "Diseñamos una estrategia de contenido a la medida de tu mercado y mensaje." },
+              { n: "03", name: "Producimos", desc: "Nuestro equipo va al campo de café y cacao a capturar la historia real." },
+              { n: "04", name: "Entregamos", desc: "Recibes contenido profesional, listo para usar en tu idioma." },
             ].map((step) => (
               <div key={step.n} className="text-center md:text-left">
                 <span className="font-heading font-bold text-5xl text-bokeh-yellow">{step.n}</span>
@@ -268,55 +268,55 @@ const Origin = () => {
         </FadeIn>
       </section>
 
-      {/* ── Section 5b: International Cases ── */}
+      {/* ── Section 5b: Casos internacionales ── */}
       <section id="portfolio" className="bg-background py-20 md:py-28">
         <FadeIn className="container mx-auto px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-3 text-center">
-            Work that speaks for itself
+            Trabajo que habla por sí mismo
           </h2>
           <p className="font-heading font-light text-muted-foreground text-center mb-14 max-w-2xl mx-auto">
-            Production, branding, packaging and translation for international clients — from origin.
+            Producción, branding, packaging y traducción para clientes internacionales — desde el origen.
           </p>
           <div className="flex flex-col gap-8 max-w-5xl mx-auto">
-            <CaseCard label="Audiovisual production" title="Client name placeholder" description="Short description of the international project, one or two lines." tag="International client" />
-            <CaseCard label="Branding & packaging" title="Client name placeholder" description="Short description of the international project, one or two lines." tag="International client" />
-            <CaseCard label="Translation & transcription" title="Client name placeholder" description="Short description of the international project, one or two lines." tag="International client" />
+            <CaseCard label="Producción audiovisual" title="Nombre del cliente" description="Breve descripción del proyecto internacional, una o dos líneas." tag="Cliente internacional" />
+            <CaseCard label="Branding & packaging" title="Nombre del cliente" description="Breve descripción del proyecto internacional, una o dos líneas." tag="Cliente internacional" />
+            <CaseCard label="Traducción y transcripción" title="Nombre del cliente" description="Breve descripción del proyecto internacional, una o dos líneas." tag="Cliente internacional" />
           </div>
           <div className="text-center mt-10">
             <Link
               to="/portafolio"
               className="font-heading font-medium text-bokeh-green hover:underline transition-colors"
             >
-              See full portfolio →
+              Ver portafolio completo →
             </Link>
           </div>
         </FadeIn>
       </section>
 
-      {/* ── Section 6: Why Origin ── */}
+      {/* ── Section 6: Por qué el origen ── */}
       <section id="about" className="bg-bokeh-green py-20 md:py-28">
         <FadeIn className="container mx-auto px-6 lg:px-8 text-center">
           <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-bokeh-white leading-tight mb-6">
-            Why producing at origin matters
+            Por qué importa producir en el origen
           </h2>
           <p className="font-heading font-light text-lg text-bokeh-white/90 max-w-3xl mx-auto">
-            No one can tell the story of Peruvian coffee and cacao better than someone who lives it. We are local creative talent: we know the land, the culture and the people. That authenticity is something you cannot outsource from a distance.
+            Nadie puede contar la historia del café y cacao peruano mejor que quien la vive. Somos talento creativo local: conocemos la tierra, la cultura y la gente. Esa autenticidad no se puede tercerizar a la distancia.
           </p>
         </FadeIn>
       </section>
 
-      {/* ── Section 7: Who It's For ── */}
+      {/* ── Section 7: Para quién es ── */}
       <section className="bg-background py-20 md:py-28">
         <FadeIn className="container mx-auto px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-14 text-center">
-            This is for you if...
+            Esto es para ti si...
           </h2>
           <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {[
-              { bold: "You import or distribute", desc: "Peruvian coffee or cacao internationally" },
-              { bold: "You need origin content", desc: "for trade fairs, buyers or retail partners" },
-              { bold: "You want a stronger visual narrative", desc: "around your sourcing story" },
-              { bold: "You are a cooperative or association", desc: "looking to reach global markets" },
+              { bold: "Importas o distribuyes", desc: "café o cacao peruano internacionalmente" },
+              { bold: "Necesitas contenido de origen", desc: "para ferias, compradores o socios retail" },
+              { bold: "Quieres una narrativa visual más fuerte", desc: "alrededor de tu historia de abastecimiento" },
+              { bold: "Eres una cooperativa o asociación", desc: "que busca llegar a mercados globales" },
             ].map((item, i) => (
               <div key={i} className="border-l-4 border-bokeh-yellow pl-5 py-3">
                 <h3 className="font-heading font-bold text-lg text-foreground">{item.bold}</h3>
@@ -331,10 +331,10 @@ const Origin = () => {
       <section className="bg-bokeh-white" style={{ padding: "40px 0" }}>
         <FadeIn className="container mx-auto px-6 lg:px-8">
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4 text-center">
-            Trusted by brands and organizations across the industry
+            La confianza de marcas y organizaciones de la industria
           </h2>
           <p className="font-heading font-light text-muted-foreground text-center mb-10 mx-auto" style={{ maxWidth: 600 }}>
-            We have worked with coffee and cacao cooperatives, NGOs and international organizations across northern Peru. We speak your language — literally. Our team includes English-Spanish translation for seamless communication.
+            Hemos trabajado con cooperativas de café y cacao, ONGs y organizaciones internacionales en todo el norte del Perú. Hablamos tu idioma — literalmente. Nuestro equipo incluye traducción inglés-español para una comunicación fluida.
           </p>
           {(() => {
             const trustLogos = [
@@ -372,7 +372,7 @@ const Origin = () => {
               to="/nosotros"
               className="font-heading font-medium text-muted-foreground hover:text-foreground hover:underline transition-colors"
             >
-              Learn more about us →
+              Conoce más sobre nosotros →
             </Link>
           </div>
         </FadeIn>
@@ -382,22 +382,22 @@ const Origin = () => {
       <section id="contact" className="bg-bokeh-dark py-24 md:py-32">
         <FadeIn className="container mx-auto px-6 lg:px-8 text-center">
           <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-bokeh-white mb-4">
-            Ready to show the world where your product comes from?
+            ¿Listo para mostrarle al mundo de dónde viene tu producto?
           </h2>
           <p className="font-heading font-light text-lg text-bokeh-white/70 mb-10">
-            Let's create content that opens doors.
+            Creemos contenido que abre puertas.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="cta" size="lg" asChild>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                Write to us on WhatsApp
+                Escríbenos por WhatsApp
               </a>
             </Button>
             <a
               href="mailto:contacto@bokeh.pe"
               className="font-heading font-medium text-bokeh-white border border-bokeh-white/60 px-8 py-3 rounded-full hover:bg-bokeh-white/10 transition-all duration-200"
             >
-              Send us an email
+              Envíanos un correo
             </a>
           </div>
         </FadeIn>
@@ -409,10 +409,10 @@ const Origin = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <span className="font-heading text-2xl font-bold text-bokeh-white">Bokeh</span>
             <ul className="flex items-center gap-6">
-              {["Home", "Services", "Portfolio", "About us", "Contact"].map((link) => (
-                <li key={link}>
-                  <a href={`#${link.toLowerCase().replace(" ", "")}`} className="font-heading font-light text-sm text-bokeh-white/60 hover:text-bokeh-yellow transition-colors">
-                    {link}
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} className="font-heading font-light text-sm text-bokeh-white/60 hover:text-bokeh-yellow transition-colors">
+                    {link.label}
                   </a>
                 </li>
               ))}
@@ -430,7 +430,7 @@ const Origin = () => {
             </div>
           </div>
           <div className="mt-10 text-center">
-            <p className="font-heading font-light text-xs text-bokeh-white/40">© 2026 Bokeh. Crafted with love.</p>
+            <p className="font-heading font-light text-xs text-bokeh-white/40">© 2026 Bokeh. Hecho con cariño.</p>
           </div>
         </div>
       </footer>
@@ -438,4 +438,4 @@ const Origin = () => {
   );
 };
 
-export default Origin;
+export default Exportacion;
