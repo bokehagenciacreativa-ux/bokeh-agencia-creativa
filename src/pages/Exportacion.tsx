@@ -129,24 +129,35 @@ const CaseCard = ({
   title,
   description,
   tag,
+  image,
+  href,
 }: {
   label: string;
   title: string;
   description: string;
   tag: string;
-}) => (
-  <div className="flex flex-col md:flex-row bg-bokeh-cream rounded-xl overflow-hidden border-l-4 border-bokeh-green hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-    <div className="md:w-1/3 aspect-video md:aspect-auto bg-secondary/50 flex items-center justify-center">
-      <span className="text-muted-foreground font-body text-xs">Imagen</span>
+  image?: string;
+  href?: string;
+}) => {
+  const content = (
+    <div className="flex flex-col md:flex-row bg-bokeh-cream rounded-xl overflow-hidden border-l-4 border-bokeh-green hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+      <div className="md:w-1/3 aspect-video md:aspect-auto bg-secondary/50 flex items-center justify-center overflow-hidden">
+        {image ? (
+          <img src={image} alt={title} className="w-full h-full object-cover" loading="lazy" />
+        ) : (
+          <span className="text-muted-foreground font-body text-xs">Imagen</span>
+        )}
+      </div>
+      <div className="md:w-2/3 p-6 md:p-8 flex flex-col gap-2">
+        <span className="font-heading font-medium text-xs uppercase tracking-wider text-bokeh-green">{label}</span>
+        <h3 className="font-heading font-bold text-xl text-foreground">{title}</h3>
+        <p className="font-heading font-light text-muted-foreground">{description}</p>
+        <span className="font-heading font-medium text-xs text-muted-foreground mt-2">{tag}</span>
+      </div>
     </div>
-    <div className="md:w-2/3 p-6 md:p-8 flex flex-col gap-2">
-      <span className="font-heading font-medium text-xs uppercase tracking-wider text-bokeh-green">{label}</span>
-      <h3 className="font-heading font-bold text-xl text-foreground">{title}</h3>
-      <p className="font-heading font-light text-muted-foreground">{description}</p>
-      <span className="font-heading font-medium text-xs text-muted-foreground mt-2">{tag}</span>
-    </div>
-  </div>
-);
+  );
+  return href ? <Link to={href} className="block">{content}</Link> : content;
+};
 
 /* ───── Page ───── */
 const Exportacion = () => {
@@ -279,9 +290,30 @@ const Exportacion = () => {
             Producción, branding, packaging y traducción para clientes internacionales — desde el origen.
           </p>
           <div className="flex flex-col gap-8 max-w-5xl mx-auto">
-            <CaseCard label="Producción audiovisual" title="Nombre del cliente" description="Breve descripción del proyecto internacional, una o dos líneas." tag="Cliente internacional" />
-            <CaseCard label="Branding & packaging" title="Nombre del cliente" description="Breve descripción del proyecto internacional, una o dos líneas." tag="Cliente internacional" />
-            <CaseCard label="Traducción y transcripción" title="Nombre del cliente" description="Breve descripción del proyecto internacional, una o dos líneas." tag="Cliente internacional" />
+            <CaseCard
+              label="Producción audiovisual"
+              title="Cooperativa COLINSA"
+              description="Video institucional producido en origen en Cajamarca — una herramienta narrativa de venta para mercados internacionales."
+              tag="Cliente internacional"
+              image="https://res.cloudinary.com/declwaq4r/image/upload/v1776256312/1_1.18.7_qpt6jf.jpg"
+              href="/portafolio/colinsa"
+            />
+            <CaseCard
+              label="Branding & packaging"
+              title="CHACRA Coffee"
+              description="Sistema de marca completo para competir en mercados globales sin perder de vista la chacra como origen."
+              tag="Cliente internacional"
+              image="https://res.cloudinary.com/declwaq4r/image/upload/v1776255988/Captura_de_pantalla_2026-04-15_070551_bohnei.png"
+              href="/portafolio/chacra-branding"
+            />
+            <CaseCard
+              label="Gestión de redes sociales"
+              title="Aromas del Valle"
+              description="Portafolio vivo en redes — contenido pensado para compradores internacionales, con trazabilidad e historias de productores."
+              tag="Cliente internacional"
+              image="https://res.cloudinary.com/declwaq4r/image/upload/v1776256521/Captura_de_pantalla_2026-04-15_073502_oxasc8.png"
+              href="/portafolio/aromas-del-valle"
+            />
           </div>
           <div className="text-center mt-10">
             <Link
