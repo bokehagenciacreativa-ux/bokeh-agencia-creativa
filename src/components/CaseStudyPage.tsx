@@ -178,27 +178,29 @@ const CaseStudyPage = ({
               </div>
             ) : (
               <div className="mt-10 space-y-6">
-                <div
-                  className="w-full overflow-hidden rounded-xl"
-                  style={{ backgroundColor: "#d4c9ac", aspectRatio: "16/9" }}
-                >
-                  {youtubeId ? (
-                    <iframe
-                      src={`https://www.youtube.com/embed/${youtubeId}`}
-                      title="Video del proyecto"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full"
-                      style={{ border: 0 }}
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <span style={{ fontFamily: "Outfit, sans-serif", fontWeight: 300, color: "#0c0c0c80", fontSize: 14 }}>
-                        Video de YouTube
-                      </span>
-                    </div>
-                  )}
-                </div>
+                {serviceTag === "Producción Audiovisual" && (
+                  <div
+                    className="w-full overflow-hidden rounded-xl"
+                    style={{ backgroundColor: "#d4c9ac", aspectRatio: "16/9" }}
+                  >
+                    {youtubeId ? (
+                      <iframe
+                        src={`https://www.youtube.com/embed/${youtubeId}`}
+                        title="Video del proyecto"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-full"
+                        style={{ border: 0 }}
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <span style={{ fontFamily: "Outfit, sans-serif", fontWeight: 300, color: "#0c0c0c80", fontSize: 14 }}>
+                          Video de YouTube
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                )}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <GalleryPlaceholder ratio="4/3" />
                   <GalleryPlaceholder ratio="4/3" />
