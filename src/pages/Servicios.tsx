@@ -12,6 +12,7 @@ interface ProjectCard {
   category: string;
   image: string | null;
   portfolioTag: string;
+  href?: string;
 }
 
 interface ServiceData {
@@ -40,9 +41,9 @@ const services: ServiceData[] = [
     imagePosition: "left",
     whatsappMsg: "Hola%20Bokeh%2C%20me%20interesa%20su%20servicio%20de%20producci%C3%B3n%20audiovisual.%20%C2%BFPodemos%20conversar%3F",
     projects: [
-      { title: "Video institucional Colinsa", category: "Audiovisual", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775317631/4_1.18.4_bu9h0w.jpg", portfolioTag: "audiovisual" },
-      { title: "Proyecto 2", category: "Audiovisual", image: null, portfolioTag: "audiovisual" },
-      { title: "Proyecto 3", category: "Audiovisual", image: null, portfolioTag: "audiovisual" },
+      { title: "Colinsa", category: "Audiovisual", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1776256312/1_1.18.7_qpt6jf.jpg", portfolioTag: "audiovisual", href: "/portafolio/colinsa" },
+      { title: "Gran Mirador Coffee", category: "Audiovisual", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775317631/4_1.18.4_bu9h0w.jpg", portfolioTag: "audiovisual", href: "/portafolio/gran-mirador-video" },
+      { title: "Seamos de esos", category: "Audiovisual", image: null, portfolioTag: "audiovisual" },
     ],
   },
   {
@@ -57,9 +58,9 @@ const services: ServiceData[] = [
     imagePosition: "right",
     whatsappMsg: "Hola%20Bokeh%2C%20me%20interesa%20su%20servicio%20de%20branding%20y%20dise%C3%B1o.%20%C2%BFPodemos%20conversar%3F",
     projects: [
-      { title: "Aromas del valle", category: "Branding", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775316520/MESTIZA_INGLES-05_m3hpnu.jpg", portfolioTag: "branding" },
-      { title: "Proyecto 2", category: "Branding", image: null, portfolioTag: "branding" },
-      { title: "Proyecto 3", category: "Branding", image: null, portfolioTag: "branding" },
+      { title: "Jaenitos Point", category: "Branding", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1776256097/Isologo_-_Eggshell_xy2xd2.jpg", portfolioTag: "branding", href: "/portafolio/jaenitos-point" },
+      { title: "CHACRA Coffee", category: "Branding", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1776255988/Captura_de_pantalla_2026-04-15_070551_bohnei.png", portfolioTag: "branding", href: "/portafolio/chacra-branding" },
+      { title: "Wilder García", category: "Branding", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1776256193/Captura_de_pantalla_2026-04-15_072943_nnocpt.png", portfolioTag: "branding", href: "/portafolio/wilder-garcia" },
     ],
   },
   {
@@ -74,9 +75,9 @@ const services: ServiceData[] = [
     imagePosition: "left",
     whatsappMsg: "Hola%20Bokeh%2C%20me%20interesa%20su%20servicio%20de%20gesti%C3%B3n%20de%20redes%20sociales.%20%C2%BFPodemos%20conversar%3F",
     projects: [
-      { title: "Gestión de redes sociales", category: "RRSS", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1775323142/GT_-_Consejos_safge_Bond_1_onbi8a.png", portfolioTag: "rrss" },
-      { title: "Proyecto 2", category: "RRSS", image: null, portfolioTag: "rrss" },
-      { title: "Proyecto 3", category: "RRSS", image: null, portfolioTag: "rrss" },
+      { title: "Grupo Troya", category: "RRSS", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1776256626/Captura_de_pantalla_2026-04-15_073615_jusgx5.png", portfolioTag: "rrss", href: "/portafolio/grupo-troya" },
+      { title: "Aromas del Valle", category: "RRSS", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1776256521/Captura_de_pantalla_2026-04-15_073502_oxasc8.png", portfolioTag: "rrss", href: "/portafolio/aromas-del-valle" },
+      { title: "Grain Global Perú", category: "RRSS", image: "https://res.cloudinary.com/declwaq4r/image/upload/v1776256625/Captura_de_pantalla_2026-04-15_073654_dohl3p.png", portfolioTag: "rrss", href: "/portafolio/grain-global" },
     ],
   },
 ];
@@ -114,7 +115,7 @@ const ServiceBox = ({ service }: { service: ServiceData }) => {
           {service.projects.map((proj, i) => (
             <a
               key={i}
-              href={`/portafolio?categoria=${proj.portfolioTag}`}
+              href={proj.href ?? `/portafolio?categoria=${proj.portfolioTag}`}
               className="rounded-lg overflow-hidden shadow-sm bg-bokeh-white hover:shadow-md transition-shadow"
             >
               <div className="aspect-video bg-muted overflow-hidden">
