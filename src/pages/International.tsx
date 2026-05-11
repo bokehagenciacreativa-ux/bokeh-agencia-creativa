@@ -128,24 +128,35 @@ const CaseCard = ({
   title,
   description,
   tag,
+  image,
+  href,
 }: {
   label: string;
   title: string;
   description: string;
   tag: string;
-}) => (
-  <div className="flex flex-col md:flex-row bg-bokeh-cream rounded-xl overflow-hidden border-l-4 border-bokeh-green hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-    <div className="md:w-1/3 aspect-video md:aspect-auto bg-secondary/50 flex items-center justify-center">
-      <span className="text-muted-foreground font-body text-xs">Imagen</span>
+  image?: string;
+  href?: string;
+}) => {
+  const content = (
+    <div className="flex flex-col md:flex-row bg-bokeh-cream rounded-xl overflow-hidden border-l-4 border-bokeh-green hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+      <div className="md:w-1/3 aspect-video md:aspect-auto bg-secondary/50 flex items-center justify-center overflow-hidden">
+        {image ? (
+          <img src={image} alt={title} className="w-full h-full object-cover" loading="lazy" />
+        ) : (
+          <span className="text-muted-foreground font-body text-xs">Imagen</span>
+        )}
+      </div>
+      <div className="md:w-2/3 p-6 md:p-8 flex flex-col gap-2">
+        <span className="font-heading font-medium text-xs uppercase tracking-wider text-bokeh-green">{label}</span>
+        <h3 className="font-heading font-bold text-xl text-foreground">{title}</h3>
+        <p className="font-heading font-light text-muted-foreground">{description}</p>
+        <span className="font-heading font-medium text-xs text-muted-foreground mt-2">{tag}</span>
+      </div>
     </div>
-    <div className="md:w-2/3 p-6 md:p-8 flex flex-col gap-2">
-      <span className="font-heading font-medium text-xs uppercase tracking-wider text-bokeh-green">{label}</span>
-      <h3 className="font-heading font-bold text-xl text-foreground">{title}</h3>
-      <p className="font-heading font-light text-muted-foreground">{description}</p>
-      <span className="font-heading font-medium text-xs text-muted-foreground mt-2">{tag}</span>
-    </div>
-  </div>
-);
+  );
+  return href ? <Link to={href} className="block">{content}</Link> : content;
+};
 
 /* ───── Page ───── */
 const International = () => {
@@ -278,9 +289,30 @@ const International = () => {
             Production, branding, packaging and translation for international clients — from origin.
           </p>
           <div className="flex flex-col gap-8 max-w-5xl mx-auto">
-            <CaseCard label="Audiovisual production" title="Client name placeholder" description="Short description of the international project, one or two lines." tag="International client" />
-            <CaseCard label="Branding & packaging" title="Client name placeholder" description="Short description of the international project, one or two lines." tag="International client" />
-            <CaseCard label="Translation & transcription" title="Client name placeholder" description="Short description of the international project, one or two lines." tag="International client" />
+            <CaseCard
+              label="Audiovisual production"
+              title="Cooperativa COLINSA"
+              description="Institutional video produced from origin in Cajamarca — a story-driven sales tool for international markets."
+              tag="International client"
+              image="https://res.cloudinary.com/declwaq4r/image/upload/v1776256312/1_1.18.7_qpt6jf.jpg"
+              href="/portafolio/colinsa"
+            />
+            <CaseCard
+              label="Branding & packaging"
+              title="CHACRA Coffee"
+              description="Full brand system built to compete in global markets without losing the chacra as origin."
+              tag="International client"
+              image="https://res.cloudinary.com/declwaq4r/image/upload/v1776255988/Captura_de_pantalla_2026-04-15_070551_bohnei.png"
+              href="/portafolio/chacra-branding"
+            />
+            <CaseCard
+              label="Social media strategy"
+              title="Aromas del Valle"
+              description="Living portfolio on social media — content built for international buyers, with traceability and producer stories."
+              tag="International client"
+              image="https://res.cloudinary.com/declwaq4r/image/upload/v1776256521/Captura_de_pantalla_2026-04-15_073502_oxasc8.png"
+              href="/portafolio/aromas-del-valle"
+            />
           </div>
           <div className="text-center mt-10">
             <Link
